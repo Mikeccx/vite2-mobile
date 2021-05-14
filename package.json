@@ -1,0 +1,54 @@
+{
+    "name": "vite-test",
+    "version": "0.0.0",
+    "scripts": {
+        "dev": "vite --host",
+        "build": "vue-tsc --noEmit && vite build",
+        "serve": "vite preview",
+        "lint": "vite lint"
+    },
+    "dependencies": {
+        "@vitejs/plugin-vue-jsx": "^1.1.4",
+        "postcss-pxtorem": "^6.0.0",
+        "vant": "^3.0.16",
+        "vue": "^3.0.5"
+    },
+    "eslintConfig": {
+        "root": true,
+        "env": {
+            "node": true
+        },
+        "extends": [
+            "plugin:vue/vue3-essential",
+            "eslint:recommended",
+            "@vue/prettier"
+        ],
+        "parserOptions": {
+            "parser": "babel-eslint"
+        },
+        "rules": {
+            "no-debugger": "off"
+        }
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^1.2.2",
+        "@vue/compiler-sfc": "^3.0.5",
+        "@vue/eslint-config-prettier": "^6.0.0",
+        "babel-eslint": "^10.1.0",
+        "eslint": "^7.26.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-import": "^2.23.0",
+        "eslint-plugin-prettier": "^3.4.0",
+        "eslint-plugin-vue": "^7.9.0",
+        "less": "^4.1.1",
+        "lib-flexible": "^0.3.2",
+        "prettier": "^2.3.0",
+        "pretty-quick": "^3.1.0",
+        "typescript": "^4.1.3",
+        "vite": "^2.3.0",
+        "vite-plugin-eslint": "^1.1.0",
+        "vite-plugin-style-import": "^0.10.0",
+        "vue-eslint-parser": "^7.6.0",
+        "vue-tsc": "^0.0.24"
+    }
+}
