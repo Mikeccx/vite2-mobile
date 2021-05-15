@@ -1,24 +1,33 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+// import viteconfig from '../../vite.config'
+// console.error('viteconfig', viteconfig)
 const routes = [
     {
         path: '/',
+        redirect: '/home'
+    },
+    {
+        path: '/home',
         name: 'Home',
         meta: {
             keepAlive: false,
             title: '主页'
         },
-        component: Home
+        component: Home,
+        // props: { newsletterPopup: false }
     },
     {
-        path: '/detail',
+        path: '/detail/:id',
         name: 'Detail',
-        component: () => import('../views/Detail.vue')
+        component: () => import('../views/Detail.vue'),
+        props: (route: any) => ({ query: route.query})
     }
 ]
 
 const router = createRouter({
-    history: createWebHistory(),
+    // baseurl
+    history: createWebHistory('/vite'),
     routes
 })
 

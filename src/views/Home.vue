@@ -1,7 +1,7 @@
 <template>
     <div>
-        <van-button @click="routerPush('home')">home</van-button>
-        <van-button @click="routerPush('detail')">detail</van-button>
+        <van-button @click="routerPush('Home')">home</van-button>
+        <van-button @click="routerPush('Detail')">detail</van-button>
     </div>
 </template>
 
@@ -13,7 +13,12 @@ export default defineComponent({
     setup() {
         const router = useRouter()
         const routerPush = (path: String) => {
-            router.push(`/${path}`)
+            router.push({
+                path: `/${path}/111111`,
+                query: {
+                    q: '111122'
+                }
+            })
         }
         return {
             routerPush

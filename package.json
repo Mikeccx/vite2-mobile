@@ -29,7 +29,8 @@
             "parser": "babel-eslint"
         },
         "rules": {
-            "no-debugger": "off"
+            "no-debugger": "off",
+            "vue/comment-directive": "off"
         }
     },
     "devDependencies": {
