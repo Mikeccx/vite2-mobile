@@ -10,7 +10,7 @@ export default defineComponent({
     },
     setup(props) {
         // const route = useRoute()
-          console.error('route', props)
+        console.error('route', props)
         return {}
     }
 })

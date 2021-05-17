@@ -14,14 +14,13 @@ const routes = [
             keepAlive: false,
             title: '主页'
         },
-        component: Home,
-        // props: { newsletterPopup: false }
+        component: Home
     },
     {
         path: '/detail/:id',
         name: 'Detail',
         component: () => import('../views/Detail.vue'),
-        props: (route: any) => ({ query: route.query})
+        props: (route: any) => ({ query: route.query })
     }
 ]
 
@@ -31,6 +30,6 @@ const router = createRouter({
     routes
 })
 
-router.afterEach(() => {})
+router.afterEach(() => { })
 
 export default router
