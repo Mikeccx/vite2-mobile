@@ -2,15 +2,12 @@
     <div>it starts with one</div>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, inject } from 'vue'
 // import { useRoute } from 'vue-router'
 export default defineComponent({
-    props: {
-        query: {}
-    },
-    setup(props) {
-        // const route = useRoute()
-        console.error('route', props)
+    setup() {
+        const route: any = inject('route')
+        console.error('route', route?.query)
         return {}
     }
 })

@@ -25,11 +25,8 @@ const routes = [
 ]
 
 const router = createRouter({
-    // baseurl
     history: createWebHistory('/vite'),
     routes
 })
-
-router.afterEach(() => { })
-
+router.afterEach(() => {})
 export default router

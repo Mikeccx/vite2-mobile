@@ -1,5 +1,5 @@
 <template>
-    <div class="hello">{{ tip }}</div>
+    <div class="hello">{{ msg }}</div>
 </template>
 <script lang="ts">
 import { defineComponent, reactive, toRefs } from 'vue'
@@ -13,11 +13,15 @@ export default defineComponent({
     },
     setup: () => {
         const stateData = reactive({
-            tip: "one thing i don't know why，it doesn't even matter how hard you try~"
+            msg: 'ggg'
         })
-        return {
-            ...toRefs(stateData)
-        }
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve({
+                    ...toRefs(stateData)
+                })
+            }, 2000)
+        })
     }
 })
 </script>

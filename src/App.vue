@@ -3,11 +3,29 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-
+import { defineComponent, provide } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 export default defineComponent({
     name: 'App',
-    components: {}
+    components: {},
+    setup() {
+        const router = useRouter()
+        const route = useRoute()
+        const routerPush = (path: string, params: any) => {
+            router.push({
+                path: `/${path}/`,
+                query: {
+                    ...params
+                }
+            })
+        }
+        provide('routerPush', routerPush)
+        provide('route', route)
+        return {
+            router,
+            routerPush
+        }
+    }
 })
 </script>
 
