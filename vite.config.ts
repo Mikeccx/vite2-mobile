@@ -5,7 +5,7 @@ import styleImport from 'vite-plugin-style-import';
 // https://vitejs.dev/config/
 export default defineConfig({
     // urlbase
-    base: '/vite',
+    base: '/vite/',
     build: {
         // 构建打包后的文件名
         outDir: 'web'
@@ -18,10 +18,10 @@ export default defineConfig({
         strictPort: true,
         // 开发跨域配置
         proxy: {
-            '/api': {
-                target: 'xxxxx.com',
+            '/local': {
+                target: 'http://127.0.0.1:3000',
                 changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/api/, '')
+                rewrite: (path) => path.replace(/^\/local/, '')
             },
         }
     },

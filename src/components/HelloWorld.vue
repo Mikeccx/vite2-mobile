@@ -3,6 +3,7 @@
 </template>
 <script lang="ts">
 import { defineComponent, reactive, toRefs } from 'vue'
+import axios from 'axios'
 export default defineComponent({
     name: 'HelloWorld',
     props: {
@@ -11,16 +12,17 @@ export default defineComponent({
             required: true
         }
     },
-    setup: () => {
+    setup: async () => {
         const stateData = reactive({
             msg: 'ggg'
         })
+        const res = await axios.get('/local/index')
+        console.error('res', res.data)
         return new Promise((resolve) => {
-            setTimeout(() => {
-                resolve({
-                    ...toRefs(stateData)
-                })
-            }, 2000)
+            stateData.msg = res?.data
+           resolve({
+               ...toRefs(stateData)
+           })
         })
     }
 })
